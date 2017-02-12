@@ -1,0 +1,50 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Piedra papel o tijeras</title>
+</head>
+<body>
+<button onclick="juega()">Checa</button>
+<input id="human" type="text">
+	<script type="text/javascript">
+		function juega () {
+		var ansHuman = document.getElementById('human').value
+		if (ansHuman === '') {
+			console.log('escribe algo')
+		} else {
+			var hand = Math.floor((Math.random() * 3) + 1)
+				switch (hand) {
+				    case 1:
+				        hand = "piedra";
+				        break;
+				    case 2:
+				        hand = "papel";
+				        break;
+				    case 3:
+				        hand = "tijeras";
+				        break;
+				}
+				console.log('hand', hand)
+				console.log('ansHuman', ansHuman)
+
+				if (ansHuman === hand) {
+					console.log('Empate')
+				} else if (ansHuman === 'piedra' && hand === 'papel') {
+					console.log('Mac gana')
+				} else if (ansHuman === 'papel' && hand === 'piedra') {
+					console.log('User gana')
+				} else if (ansHuman === 'tijeras' && hand === 'piedra') {
+					console.log('Mac gana')
+				} else if (hand === 'tijeras' && ansHuman === 'piedra') {
+					console.log('User gana')
+				} else if (hand === 'tijeras' && ansHuman === 'papel') {
+					console.log('Mac gana')
+				} else if (hand === 'papel' && ansHuman === 'tijeras') {
+					console.log('User gana')
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>
